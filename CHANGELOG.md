@@ -3,6 +3,13 @@
 Todos los cambios importantes de este proyecto serán documentados en este archivo.
 
 El formato está basado en Keep a Changelog y este proyecto sigue Versionado Semántico (Semantic Versioning).
+---
+
+## [1.1.0] - 2026-05-31
+
+### Changed
+- Se agregó un parámetro opcional `completed` al endpoint **GET /tasks** para permitir filtrar tareas por estado (pendientes o completadas).
+- Mejora menor que amplía la funcionalidad sin alterar la compatibilidad existente.
 
 ---
 
@@ -21,18 +28,5 @@ El formato está basado en Keep a Changelog y este proyecto sigue Versionado Sem
 * Creación del archivo README.md.
 * Configuración inicial del repositorio Git.
 
----
 
-## Próximas Versiones
 
-### [1.1.0] - Planificado
-
-* Mejoras en validación de datos.
-* Manejo avanzado de errores.
-* Persistencia de datos mediante base de datos.
-
-### [1.2.0] - Planificado
-
-* Sistema de autenticación.
-* Gestión de usuarios.
-* Seguridad de endpoints.

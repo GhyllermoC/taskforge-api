@@ -1,4 +1,4 @@
-# 🚀 TaskForge API
+# 🚀 TaskForge API V1.1.0
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![Python](https://img.shields.io/badge/Python-3.12-yellow)
@@ -249,7 +249,7 @@ Consulte el archivo `LICENSE` para más información.
 
 ---
 
-# 👨‍💻 Autor
+# 👨‍💻 Autores
 
 **Guillermo Carpio**
 **Jandry Cordova**
