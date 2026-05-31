@@ -27,10 +27,13 @@ tasks = [
     }
 ]
 
-# GET - Listar tareas
+# GET - Listar tareas con filtro opcional
 @app.get("/tasks")
-def get_tasks():
-    return tasks
+def get_tasks(completed: bool | None = None):
+    if completed is None:
+        return tasks
+    return [task for task in tasks if task["completed"] == completed]
+
 
 # POST - Crear tarea
 @app.post("/tasks", status_code=201)
