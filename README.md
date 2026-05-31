@@ -1,4 +1,4 @@
-# 🚀 TaskForge API V1.1.0
+# 🚀 TaskForge API v2.0.0
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![Python](https://img.shields.io/badge/Python-3.12-yellow)
