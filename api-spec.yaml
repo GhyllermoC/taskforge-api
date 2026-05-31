@@ -1,0 +1,140 @@
+openapi: 3.0.3
+
+info:
+  title: TaskForge API
+  description: API REST para la gestión de tareas personales.
+  version: 1.0.0
+
+  contact:
+    name: Guillermo Carpio, Jandry Cordova
+    email: college.bmv.edu.ec
+
+  x-author:
+    institution: "BMV"
+    phone: "+593 99 999 9999"
+
+servers:
+  - url: http://localhost:8000
+    description: Servidor local
+
+paths:
+
+  /tasks:
+
+    get:
+      summary: Obtener todas las tareas
+      description: Retorna una lista con todas las tareas registradas.
+      responses:
+        '200':
+          description: Lista de tareas obtenida correctamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Task'
+
+    post:
+      summary: Crear una nueva tarea
+      description: Permite registrar una nueva tarea.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskInput'
+
+      responses:
+        '201':
+          description: Tarea creada exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+
+  /tasks/{id}:
+
+    put:
+      summary: Actualizar una tarea
+      description: Actualiza completamente una tarea existente.
+
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskInput'
+
+      responses:
+        '200':
+          description: Tarea actualizada correctamente
+
+        '404':
+          description: Tarea no encontrada
+
+    delete:
+      summary: Eliminar una tarea
+      description: Elimina una tarea según su identificador.
+
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+
+      responses:
+        '200':
+          description: Tarea eliminada correctamente
+
+        '404':
+          description: Tarea no encontrada
+
+components:
+
+  schemas:
+
+    Task:
+      type: object
+
+      properties:
+
+        id:
+          type: integer
+          example: 1
+
+        title:
+          type: string
+          example: Estudiar FastAPI
+
+        completed:
+          type: boolean
+          example: false
+
+      required:
+        - id
+        - title
+        - completed
+
+    TaskInput:
+      type: object
+
+      properties:
+
+        title:
+          type: string
+          example: Estudiar FastAPI
+
+        completed:
+          type: boolean
+          example: false
+
+      required:
+        - title
