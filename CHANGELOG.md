@@ -3,6 +3,18 @@
 Todos los cambios importantes de este proyecto serán documentados en este archivo.
 
 El formato está basado en Keep a Changelog y este proyecto sigue Versionado Semántico (Semantic Versioning).
+
+---
+
+## [2.0.0] - 2026-05-31
+
+### Changed
+- Redefinición del modelo `Task` para incluir subtareas.
+- Creación del nuevo modelo `SubTask`.
+- Actualización de todos los endpoints para adaptarse al nuevo modelo.
+- Inclusión del endpoint **POST /tasks/{id}/subtasks** para gestión avanzada.
+- Cambio mayor que rompe compatibilidad con la versión 1.1.0
+
 ---
 
 ## [1.1.0] - 2026-05-31
@@ -27,6 +39,3 @@ El formato está basado en Keep a Changelog y este proyecto sigue Versionado Sem
 * Generación automática de especificación OpenAPI.
 * Creación del archivo README.md.
 * Configuración inicial del repositorio Git.
-
-
-
